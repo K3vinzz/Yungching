@@ -1,8 +1,8 @@
 using System;
 using Dapper;
 using Yungching.Application.Common.Interfaces;
-using Yungching.Application.Repositories;
 using Yungching.Domain.Entities;
+using Yungching.Domain.Interfaces.Repositories;
 
 namespace Yungching.Infrastructure.Persistence.Repositories;
 
