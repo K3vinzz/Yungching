@@ -74,5 +74,11 @@ namespace Yungching.API.Controllers
 
             return NoContent();
         }
+
+        [HttpGet("throw")]
+        public IActionResult ThrowException()
+        {
+            throw new Exception("Testing exception");
+        }
     }
 }
