@@ -1,4 +1,6 @@
-# Yungching - Northwind WebAPI
+# Yungching - Restful Northwind WebAPI
+
+Basic CRUD on orders of Northwind database.
 
 ## 📦 Project Structure
 
@@ -14,4 +16,7 @@
 -   Domain-Driven Design (DDD)
 -   CQRS (MediatR)
 -   Dapper
+-   AutoMapper
 -   SQL Server (via Docker)
+-   Docker
+-   XUnit
