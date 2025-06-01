@@ -63,7 +63,16 @@ namespace Yungching.API.Controllers
             return NoContent();
         }
 
+        [HttpDelete("{id}")]
+        public async Task<ActionResult> Delete(int id)
+        {
+            var command = new DeleteOrderCommand(id);
 
+            var success = await _mediator.Send(command);
+            if (!success)
+                return NotFound();
 
+            return NoContent();
+        }
     }
 }

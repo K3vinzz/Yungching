@@ -28,9 +28,14 @@ public class OrderRepository : IOrderRepository
         return newId;
     }
 
-    public Task<bool> DeleteAsync(int orderId)
+    public async Task<bool> DeleteAsync(int orderId)
     {
-        throw new NotImplementedException();
+        using var connection = _dbConnectionFactory.CreateConnection();
+        connection.Open();
+
+        var sql = "DELETE FROM Orders WHERE OrderId = @OrderId";
+        var affectedRows = await connection.ExecuteAsync(sql, new { OrderId = orderId });
+        return affectedRows > 0;
     }
 
     public async Task<IEnumerable<Order>> GetAllAsync()
