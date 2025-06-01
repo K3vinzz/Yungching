@@ -12,6 +12,6 @@
 -   .NET 8.0
 -   Clean Architecture
 -   Domain-Driven Design (DDD)
--   CQRS
+-   CQRS (MediatR)
 -   Dapper
 -   SQL Server (via Docker)
