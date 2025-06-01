@@ -55,8 +55,30 @@ public class OrderRepository : IOrderRepository
         return order;
     }
 
-    public Task<bool> UpdateAsync(Order order)
+    public async Task<bool> UpdateAsync(Order order)
     {
-        throw new NotImplementedException();
+        using var connection = _dbConnectionFactory.CreateConnection();
+        connection.Open();
+
+        var sql = @"
+            UPDATE Orders
+            SET
+                CustomerId = @CustomerId,
+                EmployeeId = @EmployeeId,
+                OrderDate = @OrderDate,
+                RequiredDate = @RequiredDate,
+                ShippedDate = @ShippedDate,
+                ShipVia = @ShipVia,
+                Freight = @Freight,
+                ShipName = @ShipName,
+                ShipAddress = @ShipAddress,
+                ShipCity = @ShipCity,
+                ShipRegion = @ShipRegion,
+                ShipPostalCode = @ShipPostalCode,
+                ShipCountry = @ShipCountry
+            WHERE OrderId = @OrderId";
+
+        var affectedRows = await connection.ExecuteAsync(sql, order);
+        return affectedRows > 0;
     }
 }

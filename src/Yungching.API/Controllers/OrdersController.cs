@@ -51,5 +51,19 @@ namespace Yungching.API.Controllers
             return CreatedAtAction(nameof(GetById), new { id = createdOrderId }, null);
         }
 
+        [HttpPut("{id}")]
+        public async Task<ActionResult> Update(UpdateOrderDto updateOrderDto)
+        {
+            var command = new UpdateOrderCommand(updateOrderDto);
+
+            var success = await _mediator.Send(command);
+            if (!success)
+                return NotFound();
+
+            return NoContent();
+        }
+
+
+
     }
 }
