@@ -1,6 +1,6 @@
 using MediatR;
-using Yungching.Domain.Entities;
+using Yungching.Application.Orders.DTOs;
 
 namespace Yungching.Application.Orders.Commands;
 
-public record UpdateOrderCommand(Order Order) : IRequest<bool>;
+public record UpdateOrderCommand(UpdateOrderDto Order) : IRequest<bool>;
