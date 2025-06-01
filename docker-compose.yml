@@ -1,0 +1,19 @@
+services:
+  yungching-api:
+    build:
+      context: .
+      dockerfile: src/Yungching.API/Dockerfile
+    container_name: yungching-api
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ConnectionStrings__DefaultConnection=Server=Northwind,1433;Database=Northwind;User Id=sa;Password=Aa1108168*;TrustServerCertificate=true;MultipleActiveResultSets=true
+    ports:
+      - "8081:80"
+    networks:
+      - yungching-network
+
+networks:
+  yungching-network:
+    driver: bridge
+    name: yungching-network
+    external: true
