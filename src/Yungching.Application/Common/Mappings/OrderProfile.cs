@@ -11,5 +11,7 @@ public class OrderProfile : Profile
     {
         CreateMap<OrderDto, Order>().ReverseMap();
         CreateMap<OrderDetailDto, OrderDetail>().ReverseMap();
+        CreateMap<CreateOrderDto, Order>();
+        CreateMap<UpdateOrderDto, Order>();
     }
 }

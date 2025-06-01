@@ -44,7 +44,8 @@ namespace Yungching.Application.Orders.Handlers
 
         public async Task<bool> Handle(UpdateOrderCommand request, CancellationToken cancellationToken)
         {
-            return await _orderRepository.UpdateAsync(request.Order);
+            var order = _mapper.Map<Order>(request.Order);
+            return await _orderRepository.UpdateAsync(order);
         }
 
         public async Task<bool> Handle(DeleteOrderCommand request, CancellationToken cancellationToken)
