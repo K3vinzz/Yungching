@@ -13,9 +13,19 @@ public class OrderRepository : IOrderRepository
     {
         _dbConnectionFactory = dbConnectionFactory;
     }
-    public Task<int> CreateAsync(Order order)
+    public async Task<int> CreateAsync(Order order)
     {
-        throw new NotImplementedException();
+        using var connection = _dbConnectionFactory.CreateConnection();
+        connection.Open();
+
+        var sql = @"
+                INSERT INTO Orders (CustomerId, EmployeeId, OrderDate, RequiredDate, ShippedDate, ShipVia, Freight, ShipName, ShipAddress, ShipCity, ShipRegion, ShipPostalCode, ShipCountry)
+                VALUES (@CustomerId, @EmployeeId, @OrderDate, @RequiredDate, @ShippedDate, @ShipVia, @Freight, @ShipName, @ShipAddress, @ShipCity, @ShipRegion, @ShipPostalCode, @ShipCountry);
+                SELECT CAST(SCOPE_IDENTITY() as int);
+            ";
+
+        var newId = await connection.QuerySingleAsync<int>(sql, order);
+        return newId;
     }
 
     public Task<bool> DeleteAsync(int orderId)
