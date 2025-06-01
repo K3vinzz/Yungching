@@ -1,6 +1,6 @@
 using MediatR;
-using Yungching.Domain.Entities;
+using Yungching.Application.Orders.DTOs;
 
 namespace Yungching.Application.Orders.Commands;
 
-public record CreateOrderCommand(Order Order) : IRequest<int>;
+public record CreateOrderCommand(OrderDto Order) : IRequest<int>;

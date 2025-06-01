@@ -1,7 +1,7 @@
 using System;
 using MediatR;
-using Yungching.Domain.Entities;
+using Yungching.Application.Orders.DTOs;
 
 namespace Yungching.Application.Orders.Queries;
 
-public record GetOrdersQuery() : IRequest<IEnumerable<Order>>;
+public record GetOrdersQuery() : IRequest<IEnumerable<OrderDto>>;
