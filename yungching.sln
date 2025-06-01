@@ -13,6 +13,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Yungching.Domain", "src\Yun
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Yungching.Infrastructure", "src\Yungching.Infrastructure\Yungching.Infrastructure.csproj", "{F51F2757-0BB8-4DA1-AE64-B194A43BE8FF}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{A1791D52-EF7F-4CDC-BD2F-E6F5B84FA0A2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Yungching.Application.Tests", "test\Yungching.Application.Tests\Yungching.Application.Tests.csproj", "{CEC6404D-6362-4959-BB96-1D2DE4C2ED3C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -38,11 +42,16 @@ Global
 		{F51F2757-0BB8-4DA1-AE64-B194A43BE8FF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F51F2757-0BB8-4DA1-AE64-B194A43BE8FF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F51F2757-0BB8-4DA1-AE64-B194A43BE8FF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CEC6404D-6362-4959-BB96-1D2DE4C2ED3C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CEC6404D-6362-4959-BB96-1D2DE4C2ED3C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CEC6404D-6362-4959-BB96-1D2DE4C2ED3C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CEC6404D-6362-4959-BB96-1D2DE4C2ED3C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{6C0749C2-9676-48E3-944F-361BC791E3F5} = {843620E8-59C2-4334-90A5-FF61091073C5}
 		{794DDDE2-41A1-4767-BC72-2B0691D8EC7F} = {843620E8-59C2-4334-90A5-FF61091073C5}
 		{59B3E629-D2DC-4DBB-92F0-11700E7C2A55} = {843620E8-59C2-4334-90A5-FF61091073C5}
 		{F51F2757-0BB8-4DA1-AE64-B194A43BE8FF} = {843620E8-59C2-4334-90A5-FF61091073C5}
+		{CEC6404D-6362-4959-BB96-1D2DE4C2ED3C} = {A1791D52-EF7F-4CDC-BD2F-E6F5B84FA0A2}
 	EndGlobalSection
 EndGlobal
