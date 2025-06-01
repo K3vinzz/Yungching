@@ -22,5 +22,15 @@ namespace Yungching.API.Controllers
             var orders = await _orderRepository.GetAllAsync();
             return Ok(orders);
         }
+
+        [HttpGet("{id}")]
+        public async Task<ActionResult<OrderDto>> GetById(int id)
+        {
+            var order = await _orderRepository.GetByIdAsync(id);
+            if (order == null)
+                return NotFound();
+
+            return Ok(order);
+        }
     }
 }
